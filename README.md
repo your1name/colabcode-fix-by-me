@@ -45,7 +45,7 @@ You can get token at: ngrok.com
 
 **Step 2: Import and use** 
 
-Default is use vscode latest of [coder](https://github.com/coder/code-server). You can check version in [here](https://github.com/coder/code-server/releases)
+Default is use vscode latest of [coder](https://github.com/coder/code-server). You can check version at [here](https://github.com/coder/code-server/releases)
 
 
 ```python
