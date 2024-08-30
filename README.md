@@ -7,7 +7,7 @@
 ## Installation
 
 ```python
-$ pip install git+https://github.com/your1name/colabcode-fix-by-me
+$ pip install git+https://github.com/your1name/colabcode-fix-update
 ```
 
 Run code server on [Google Colab](https://colab.research.google.com/) or [Kaggle](https://www.kaggle.com/) Notebooks.
