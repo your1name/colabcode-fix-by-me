@@ -15,13 +15,14 @@ except ImportError:
     colab_env = False
 
 
-EXTENSIONS = ["ms-python.python", "ms-toolsai.jupyter", "mechatroner.rainbow-csv", "vscode-icons-team.vscode-icons","Karsten7.mojo-vscode"]
-CODESERVER_VERSION = "4.92.2"
+EXTENSIONS = ["ms-python.python", "ms-toolsai.jupyter", "mechatroner.rainbow-csv", "vscode-icons-team.vscode-icons"]
+# CODESERVER_VERSION = "3.10.2"
 
 
 class ColabCode:
     def __init__(
         self,
+        version=None,
         port=10000,
         password=None,
         authtoken=None,
@@ -29,6 +30,7 @@ class ColabCode:
         code=True,
         lab=False,
     ):
+        self.version = version
         self.port = port
         self.password = password
         self.authtoken = authtoken
@@ -44,13 +46,25 @@ class ColabCode:
             self._start_server()
             self._run_code()
 
-    @staticmethod
-    def _install_code():
+
+    def _install_code(self):
         subprocess.run(["wget", "https://code-server.dev/install.sh"], stdout=subprocess.PIPE)
-        subprocess.run(
-            ["sh", "install.sh", "--version", f"{CODESERVER_VERSION}"],
-            stdout=subprocess.PIPE,
-        )
+        if self.version:
+          try:
+            subprocess.run(
+                ["sh", "install.sh", "--version", f"{self.version}"],
+                stdout=subprocess.PIPE,
+                check=True
+            )
+          except:
+            RED_COLOR = '\033[91m'
+            RESET_COLOR = '\033[0m'
+            print(f'{RED_COLOR}Invalid version. Please check https://github.com/coder/code-server/releases to find version or use default option {RESET_COLOR} \n\n')
+        else:
+          subprocess.run(
+              ["sh", "install.sh"],
+              stdout=subprocess.PIPE,
+          )
 
     @staticmethod
     def _install_extensions():

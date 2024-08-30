@@ -29,6 +29,7 @@ required arguments:
 optional arguments:
   --password PASSWORD  password to protect your code-server from unauthorized access
   --mount_drive        if you use --mount_drive, your google drive will be mounted
+  --version            Choose the version of VSCode to install, default is latest version
 ```
 
 **Else**, you can do the following:
@@ -43,6 +44,8 @@ $ ngrok.set_auth_token("YOUR_TOKEN")
 You can get token at: ngrok.com
 
 **Step 2: Import and use** 
+
+Default is use vscode latest of [coder](https://github.com/coder/code-server). You can check version in [here](https://github.com/coder/code-server/releases)
 
 
 ```python
@@ -61,7 +64,8 @@ $ ColabCode()
 # - password: password to protect your code server from being accessed by someone else.
 #             Note that there is no password by default!
 # - mount_drive: True or False to mount your Google Drive
-$ ColabCode(port=10000, password="yourpass", mount_drive=True)
+# - version: Choose the version of vscode, default 
+$ ColabCode(port=10000, password="yourpass", mount_drive=True, version="4.92.2")
 ```
 
 ## License

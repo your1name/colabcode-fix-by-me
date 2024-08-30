@@ -31,6 +31,13 @@ if __name__ == "__main__":
         help="if you use --mount_drive, your google drive will be mounted",
     )
 
+    optional.add_argument(
+        "--version",
+        type=str,
+        help="Choose the version of VSCode to install. default is latest version",
+        default=False,
+    )
+
     args = parser.parse_args()
 
-    ColabCode(port=args.port, password=args.password, mount_drive=args.mount_drive)
+    ColabCode(port=args.port, password=args.password, mount_drive=args.mount_drive, version=args.version)
