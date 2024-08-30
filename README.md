@@ -1,4 +1,4 @@
-# ColabCode
+# ColabCode (fix-update)
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 [![PyPI version](https://badge.fury.io/py/colabcode.svg)](https://badge.fury.io/py/colabcode)
@@ -7,7 +7,7 @@
 ## Installation
 
 ```python
-$ pip install colabcode
+$ pip install git+https://github.com/your1name/colabcode-fix-by-me
 ```
 
 Run code server on [Google Colab](https://colab.research.google.com/) or [Kaggle](https://www.kaggle.com/) Notebooks.
@@ -33,6 +33,18 @@ optional arguments:
 
 **Else**, you can do the following:
 
+**Step 1: Add Auth token of ngrok**
+
+```python
+
+$ from pyngrok import ngrok
+$ ngrok.set_auth_token("YOUR_TOKEN") 
+```
+You can get token at: ngrok.com
+
+**Step 2: Import and use** 
+
+
 ```python
 # import colabcode
 $ from colabcode import ColabCode
@@ -49,18 +61,8 @@ $ ColabCode()
 # - password: password to protect your code server from being accessed by someone else.
 #             Note that there is no password by default!
 # - mount_drive: True or False to mount your Google Drive
-$ ColabCode(port=10000, password="abhishek", mount_drive=True)
+$ ColabCode(port=10000, password="yourpass", mount_drive=True)
 ```
-
-## How to use it?
-
-**Colab** starter notebook: &nbsp;&nbsp; [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/abhishekkrthakur/colabcode/blob/master/colab_starter.ipynb)
-
-**`ColabCode`**  comes pre-installed with some VS Code extensions.
-
-### See an example in youtube video
-
-[![YouTube Video](https://img.shields.io/youtube/views/7kTbM3D02jU?style=social)](https://youtu.be/7kTbM3D02jU)
 
 ## License
 

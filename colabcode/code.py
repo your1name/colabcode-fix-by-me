@@ -15,8 +15,8 @@ except ImportError:
     colab_env = False
 
 
-EXTENSIONS = ["ms-python.python", "ms-toolsai.jupyter", "mechatroner.rainbow-csv", "vscode-icons-team.vscode-icons"]
-CODESERVER_VERSION = "3.10.2"
+EXTENSIONS = ["ms-python.python", "ms-toolsai.jupyter", "mechatroner.rainbow-csv", "vscode-icons-team.vscode-icons","Karsten7.mojo-vscode"]
+CODESERVER_VERSION = "4.92.2"
 
 
 class ColabCode:
